@@ -24,8 +24,8 @@ if __name__ == '__main__':
                         help='task name, options:[long_term_forecast, short_term_forecast, zero_shot_forecast, in_context_forecast]')
     parser.add_argument('--is_training', type=int, required=True, default=1, help='status')
     parser.add_argument('--model_id', type=str, required=True, default='test', help='model id')
-    parser.add_argument('--model', type=str, required=True, default='AutoTimes_Llama',
-                        help='model name, options: [AutoTimes_Llama, AutoTimes_Gpt2, AutoTimes_Opt1b]')
+    parser.add_argument('--model', type=str, required=True, default='LLMFilter_PLlama',
+                        help='model name, options: [LLMFilter_PLlama, LLMFilter_PGpt2, LLMFilter_POpt1b]')
     parser.add_argument('--prompt_domain', type=int, default=1, help='whether to use prompt')
     parser.add_argument('--save', type=bool, default=False, help='whether to save results')
 
