@@ -1,20 +1,22 @@
 # One Filters All: A Generalist Filter For State Estimation
 
-Official implementation: [One Filters All: A Generalist Filter For State Estimation](https://arxiv.org/abs/2402.02370). 
+Official implementation: [One Filters All: A Generalist Filter For State Estimation]
+<!-- (https://arxiv.org/abs/2402.02370).  -->
 <!-- [[Slides]](https://cloud.tsinghua.edu.cn/f/7689d30f92594ded84f0/), [[Poster]](https://cloud.tsinghua.edu.cn/f/f2c18ae34fef4e74ad46/) -->
 
 ## Table of Contents
 
-1. [Updates](#updates)
-2. [Introduction](#introduction)
-3. [Methodology](#methodology)
-4. [Experiments](#experiments)
-5. [Quick Start](#quick-start)
+<!-- 1. [Updates](#updates)
+2.  -->
+1. [Introduction](#introduction)
+2. [Methodology](#methodology)
+3. [Experiments](#experiments)
+4. [Quick Start](#quick-start)
 <!-- 6. [Acknowledgement](#Acknowledgement) -->
 
-## Updates
+<!-- ## Updates
 
-:triangular_flag_on_post: **News** (2025.1) Scripts for the above tasks in our [paper](https://arxiv.org/pdf/2402.02370.pdf) are all available.
+:triangular_flag_on_post: **News** (2025.1) Scripts for the above tasks in our [paper](https://arxiv.org/pdf/2402.02370.pdf) are all available. -->
 
 
 ## Introduction
