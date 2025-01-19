@@ -4,7 +4,6 @@ dataset=lorenz96
 python -u run.py \
   --task_name short_term_filtering \
   --is_training 1 \
-  --prompt_domain 1 \
   --root_path ./dataset/$dataset \
   --data_path $dataset.csv \
   --model_id $dataset \

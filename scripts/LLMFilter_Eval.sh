@@ -10,7 +10,6 @@ for model_name in "${model_names[@]}"; do
             --task_name short_term_filtering \
             --is_training 0 \
             --root_path ./dataset/$dataset \
-            --prompt_domain 1 \
             --data_path $dataset.csv \
             --model_id $dataset \
             --model $model_name \

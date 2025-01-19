@@ -23,13 +23,13 @@ Official implementation: [One Filters All: A Generalist Filter For State Estimat
 
 🌟 Estimating hidden states in dynamical systems, also known as optimal filtering, is a long-standing problem in various fields of science and engineering. To address the computational intractability of online filtering algorithms, learning-based filters have become the predominant approach. However, these methods are typically trained for specific systems, requiring repetitive retraining for different industrial applications. As a dual problem to filtering, control problems have led to the development of large control models that achieve both higher performance for specific control tasks and zero-shot capabilities across diverse control tasks.
 
-<p align="center">
-<img src="./figures/motivation_3.png"  alt="" align=center width="60%"/>
-</p>
-
 💪 Inspired by the success of large control models, we propose a general large filtering model, **LLM-Filter**, designed to solve specific estimation tasks, including zero-shot tasks, by transferring knowledge from frozen large language models (LLMs).
 
 🏆 Guided by prompts and leveraging pretraining knowledge, LLM-Filter outperforms specialized learning-based methods and demonstrates strong zero-shot generalization across various systems. This work introduces a novel perspective: state estimation can be reframed as a language task, effectively tackled using an LLM.
+
+<p align="center">
+<img src="./figures/motivation_3.png"  alt="" align=center width="60%"/>
+</p>
 
 ## Methodology
 

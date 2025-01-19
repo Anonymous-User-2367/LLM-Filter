@@ -1,13 +1,12 @@
 model_name=LLMFilter_FullLlama
 dataset=pendulum
 master_port=05098
-num_process=2
+num_process=4
 
 accelerate launch --multi_gpu --mixed_precision bf16 --num_processes $num_process --main_process_port $master_port run.py \
   --task_name short_term_filtering \
   --is_training 1 \
   --root_path ./dataset/$dataset \
-  --prompt_domain 1 \
   --data_path $dataset.csv \
   --model_id $dataset \
   --model $model_name \
