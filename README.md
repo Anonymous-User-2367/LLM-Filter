@@ -18,10 +18,14 @@ Official implementation: [One Filters All: A Generalist Filter For State Estimat
 
 💪 Inspired by the success of large control models, we propose a general large filtering model, **LLM-Filter**, designed to solve specific estimation tasks by achieving proper modality alignment with the frozen LLM.
 
+<p align="center">
+<img src="./figures/proposal.png"  alt="" align=center width="100%"/>
+</p>
+
 🏆 Guided by prompts and leveraging pretraining knowledge, LLM-Filter outperforms specialized learning-based methods and demonstrates strong in-context generalization across various systems. This work introduces a novel perspective: state estimation can be reframed as a language task, effectively tackled using an LLM.
 
 <p align="center">
-<img src="./figures/motivation_4.png"  alt="" align=center width="100%"/>
+<img src="./figures/motivation_5.png"  alt="" align=center width="100%"/>
 </p>
 
 ## Methodology
@@ -41,15 +45,15 @@ Official implementation: [One Filters All: A Generalist Filter For State Estimat
 We evaluate the fundamental filtering capabilities of the LLM-Filter on classical systems, and compare its performance with state-of-the-art filtering methods.
 
 
-| **Method**     | **LLM&#8209;Filter&#8209;C** | **LLM&#8209;Filter&#8209;O** | **MEstimator** | **RStateNet** | **ProTran** | **KalmanNet** | **EnKF** | **PF**  |
-| -------------- | ---------------------------- | ---------------------------- | -------------- | ------------- | ----------- | ------------- | -------- | ------- |
-| **Selkov**     | **0.4061**                   | 0.6369                       | 0.8864         | 0.7202        | 1.0219      | 1.1662        | 0.5978   | 0.6863  |
-| **Oscillator** | **0.5247**                   | 0.5753                       | 0.8347         | 0.8493        | 0.8933      | 0.5665        | 0.5505   | 0.6807  |
-| **Hopf**       | **0.5751**                   | 0.8180                       | 0.8290         | 0.7282        | 0.7146      | 1.1984        | 0.6322   | 0.6801  |
-| **Pendulum**   | **0.8348**                   | 0.9218                       | 0.9354         | 0.9180        | 0.8456      | 2.7140        | 1.4117   | 5.3788  |
-| **Lorenz96**   | **0.9149**                   | 0.9735                       | 0.9649         | 0.9762        | 0.9975      | NaN           | 6.6024   | 4.6289  |
-| **VL20**       | **0.7717**                   | 0.8433                       | 1.0014         | 0.9428        | 0.9902      | NaN*          | 5.8633   | 11.6980 |
-| **Average**    | **0.7139**                   | 0.7948                       | 0.9219         | 0.8737        | 0.9152      | NaN           | 2.7448   | 4.8356  |
+| **Method**     | **LLM&#8209;Filter** | **LLM&#8209;Filter&#8209;O** | **MEstimator** | **RStateNet** | **ProTran** | **KalmanNet** | **EnKF** | **PF**  |
+| -------------- | -------------------- | ---------------------------- | -------------- | ------------- | ----------- | ------------- | -------- | ------- |
+| **Selkov**     | **0.4061**           | 0.6369                       | 0.8864         | 0.7202        | 1.0219      | 1.1662        | 0.5978   | 0.6863  |
+| **Oscillator** | **0.5247**           | 0.5753                       | 0.8347         | 0.8493        | 0.8933      | 0.5665        | 0.5505   | 0.6807  |
+| **Hopf**       | **0.5751**           | 0.8180                       | 0.8290         | 0.7282        | 0.7146      | 1.1984        | 0.6322   | 0.6801  |
+| **Pendulum**   | **0.8348**           | 0.9218                       | 0.9354         | 0.9180        | 0.8456      | 2.7140        | 1.4117   | 5.3788  |
+| **Lorenz96**   | **0.9149**           | 0.9735                       | 0.9649         | 0.9762        | 0.9975      | NaN           | 6.6024   | 4.6289  |
+| **VL20**       | **0.7717**           | 0.8433                       | 1.0014         | 0.9428        | 0.9902      | NaN*          | 5.8633   | 11.6980 |
+| **Average**    | **0.7139**           | 0.7948                       | 0.9219         | 0.8737        | 0.9152      | NaN           | 2.7448   | 4.8356  |
 
 
 ### Generalization Estimation Task
@@ -65,15 +69,14 @@ We evaluated LLM-Filter in **model mismatch** scenarios on the selkov, oscillato
 
 In this experiment, we evaluate the **zero-shot** performance of completely different systems.
 Specifically, for LLM-Filter and the learning-based KalmanNet, MEstimator, RStateNet andv ProTran, we train the models on one system and test them on a different system. 
-We design three zero-shot scenarios: (1) generalization between linear and nonlinear systems (tracking and pendulum), (2) generalization between nonlinear systems (oscillator and Hopf), and (3) generalization within high-dimensional chaotic systems (Lorenz96 and VL20).
 
 <p align="center">
-<img src="./figures/in_context_0.png" alt="" align=center />
+<img src="./figures/in_context_2.png" alt="" align=center />
 </p>
 
 ### Scaling Behavior
 
-In our study, we explore the **scaling behavior** of LLM-Filter in state estimation tasks by evaluating models of different parameter sizes as the LLM backbone. Our findings illustrate the scaling behavior of LLM-Filter: **as model parameters increase, RMSE decreases, boosting estimation accuracy, though at the cost of longer training times**. We also observed performance anomalies, such as OPT-1.3B outperforming OPT-6.7B, likely due to varying data distribution preferences across LLM architectures.
+In our study, we explore the **scaling behavior** of LLM-Filter in state estimation tasks by evaluating models of different parameter sizes as the LLM backbone. Our findings illustrate the scaling behavior of LLM-Filter: **as model parameters increase, RMSE decreases, boosting estimation accuracy, though at the cost of longer training times**. 
 
 <p align="center">
 <img src="./figures/param_count_0.png" alt="" align=center width="50%"/>
